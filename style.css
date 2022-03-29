@@ -1,0 +1,29 @@
+#contenedor {
+    border: 5px outset rgb(145, 92, 92);
+    margin: 3px;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-around;
+    background-color: rgb(146, 106, 106);
+}
+#pantalla{
+    border: 5px outset  rgb(162, 170, 151);
+    background-color: azure;
+    align-items: center;
+}
+#calculadora{
+    border: 5px outset rgb(162, 170, 151);
+    background-color: chocolate;
+    text-align: center;
+    display: grid;
+    
+}
+
+input{
+    border-radius: 2px;
+    background: beige;
+    border-left-width: thick;
+    border-radius: 60px;
+}
