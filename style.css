@@ -48,20 +48,31 @@ input{
 
 }
 
+.btn-calc{
+    border: 1px solid gray;
+    background: re;
+    border-radius: 2px;
+    padding: 6px 1px;
+    box-shadow: 2px 2px 0px #333;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 90%;
+}
+.btn-calc:hover{
+    cursor: pointer;
+    box-shadow: -2px -2px 0px black;
+}
+
 .fila{
 
 }
 .columna{
     border: 1px solid black;
-    padding: 2px;
+    padding: 5px;
     text-align: center;
 }
 
-.columna:hover{
-    background-color: grey;
-    color: white;
-    cursor: pointer;
-}
+
 
 
 .w100{
