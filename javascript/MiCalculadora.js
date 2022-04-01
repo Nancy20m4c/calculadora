@@ -1,0 +1,78 @@
+class MiCalculadora {
+    constructor() {
+      this.formula = '';
+      this.resultado = '';
+      this.estaEncendido = false;
+    }
+
+  anyadirValor(valor){
+    if(this.estaEncendido){
+      this.formula = this.formula + valor;
+      this.refrescarFormula();
+    }
+  }
+
+  calcularResultado(){
+    try{
+    this.resultado= eval(this.formula);
+    document.getElementById('resultado').innerText = this.resultado;
+  }catch(error){
+    document.getElementById('resultado').innerText = error;
+
+  }
+    
+    
+  }
+
+  apagar(){
+    this.formula = ' ';
+    this.resultado = ' ';  
+    this.estaEncendido = false;
+    this.refrescarFormula();
+    console.log('se apago la calculadora');
+  }
+
+  encender(){
+      this.formula = ' ';
+      this.resultado = ' ';
+      this.estaEncendido = true;
+      this.refrescarFormula();
+      console.log('se encendio la calculadora');
+  }
+
+
+  onOff(){
+    if(this.estaEncendido){
+        this.apagar();
+    }else{
+        this.encender();
+    }
+  }
+  borrar() {
+      this.formula = this.formula.toString().slice(0,-1);
+      this.refrescarFormula();
+      this.resultado = '';
+      this.refrescarResultado();
+      
+  }
+
+  
+
+  borrarTodo(){
+    this.formula = ' ';
+    this.resultado = ' ';
+  }
+
+  refrescarFormula(){
+    let elementoFormula = document.getElementById('formula');
+    elementoFormula.innerText = this.formula;
+
+  }
+  
+  refrescarResultado(){
+    document.getElementById('resultado').innerText = this.resultado;
+  }
+  }
+
+  const calculadora = new MiCalculadora();
+  

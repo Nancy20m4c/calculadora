@@ -10,112 +10,109 @@
 </head>
 <body>
 
-<div id="calc">
-    <div id="resultado w100">
-        <div class="formula w100">0</div>
-        <div class="valor w100 ">0</div>
+<div id="calculador">
+    <div class="w100">
+        <div id="resultado" class="valor w100 ">&nbsp</div>
+        <div id="formula" class="formula w100">&nbsp</div>
+        
     </div>
     <div id="botonera w100">
         <div class="fila w100"> 
             <div class="columna w20">
-                <button class="btn-calc">sen</button>
+                <button class="btn-calc" >sen</button>
             </div>
             <div class="columna w20">
-                <button class="btn-calc">cos</button>
+                <button class="btn-calc" >cos</button>
             </div><div class="columna w20">
-                <button class="btn-calc">tan</button>
+                <button class="btn-calc" >tan</button>
             </div><div class="columna w20">
-                <button class="btn-calc">pi3.</button>
+                <button class="btn-calc" >&#960;</button>
             </div><div class="columna w20">
-                <button class="btn-calc">expo</button>
+                <button class="btn-calc" >&#69;&#88;&#80;</button>
             </div>
         </div>
         <div class="fila w100">
             <div class="columna w20">
-                <button class="btn-calc">on/off</button>
+                <button class="btn-calc" onclick="calculadora.onOff()">on/off</button>
             </div>
             <div class="columna w20">
-                <button class="btn-calc">CE</button>
+                <button class="btn-calc" onclick="calculadora.borrar()">CE</button>
             </div>
             <div class="columna w20">
-                <button class="btn-calc">C</button>
+                <button class="btn-calc" >C</button>
             </div>
             <div class="columna w20">
-                <button class="btn-calc">(</button>
+                <button class="btn-calc" >&#40;</button>
             </div>
             <div class="columna w20">
-                <button class="btn-calc">)</button>
-            </div>
-        </div>
-        <div class="fila w100">
-            <div class="columna w20">
-                <button class="btn-calc">7</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc">8</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc">9</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc">&#8731;</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc">%</button>
+                <button class="btn-calc" >&#41;</button>
             </div>
         </div>
         <div class="fila w100">
             <div class="columna w20">
-                <button class="btn-calc">4</button>
+                <button class="btn-calc" >7</button>
             </div>
             <div class="columna w20">
-                <button class="btn-calc">5</button>
+                <button class="btn-calc" >8</button>
             </div>
             <div class="columna w20">
-                <button class="btn-calc">6</button>
+                <button class="btn-calc" >9</button>
             </div>
             <div class="columna w20">
-                <button class="btn-calc">menos</button>
+                <button class="btn-calc" >&#37;</button>
             </div>
             <div class="columna w20">
-                <button class="btn-calc">*</button>
-            </div>
-        </div>
-        <div class="fila w100">
-            <div class="columna w20">
-                <button class="btn-calc">1</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc">2</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc">3</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc">+</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc">/</button>
+                <button class="btn-calc" >&radic;</button>
             </div>
         </div>
         <div class="fila w100">
             <div class="columna w20">
-                <button class="btn-calc">0</button>
+                <button class="btn-calc" >4</button>
             </div>
             <div class="columna w20">
-                <button class="btn-calc">00</button>
+                <button class="btn-calc" >5</button>
             </div>
             <div class="columna w20">
-                <button class="btn-calc">punto</button>
+                <button class="btn-calc" >6</button>
+            </div>
+            <div class="columna w20">
+                <button class="btn-calc" onclick="calculadora.anyadirValor('*')">&#47;</button>
+            </div>
+            <div class="columna w20">
+                <button class="btn-calc" >&#8270;</button>
+            </div>
+        </div>
+        <div class="fila w100">
+            <div class="columna w20">
+                <button class="btn-calc" onclick="calculadora.anyadirValor('1')">1</button>
+            </div>
+            <div class="columna w20">
+                <button class="btn-calc" >2</button>
+            </div>
+            <div class="columna w20">
+                <button class="btn-calc" >3</button>
+            </div>
+            <div class="columna w20">
+                <button class="btn-calc" onclick="calculadora.anyadirValor('+')">&#43;</button>
+            </div>
+            <div class="columna w20">
+                <button class="btn-calc" >&#8722;</button>
+            </div>
+        </div>
+        <div class="fila w100">
+            <div class="columna w40">
+                <button class="btn-calc" >0</button>
+            </div>
+            <div class="columna w20">
+                <button class="btn-calc" >&#8228;</button>
             </div>
             <div class="columna w40">
-                <button class="btn-calc">=</button>
+                <button class="btn-calc" onclick="calculadora.calcularResultado()">&#8215;</button>
             </div>
         </div>
 </div>
 
-<script src='calculos.js'></script>
+<script src='javascript/MiCalculadora.js'></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
 </body>
 </html>
