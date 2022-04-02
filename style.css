@@ -1,18 +1,29 @@
 
 #calculador{
     width: 500px;
+    height: 430px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 10px;
 }
 
+#formula{
+    height:49px;
+}
 #resultado{
-
+    height: 49px;
+    border-bottom: 1px dashed gray;
 }
-.formula{
-    border: 1px solid black;  
-}
-.valor{
-    border: 1px solid black;  
-}
-.botonera{
+.display{
+    width: 98%;
+    border: 1px solid black;
+    margin: 6px;
+    height: 100px;
+    text-align: right;
+    font-size: 29px;
+    padding: 0px 10px;
+    background-color: #f6f6f6;
+    border-radius: 4px;
 
 }
 
@@ -36,11 +47,10 @@ button:active {
    }
 
 .fila{
-    height: flex;
+    height: 50px;
 }
 .columna{
-    border: 1px solid black;
-    padding: 5px;
+
     text-align: center;
 }
 

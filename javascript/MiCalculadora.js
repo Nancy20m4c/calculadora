@@ -43,24 +43,34 @@ class MiCalculadora {
 
   onOff(){
     if(this.estaEncendido){
-        this.apagar();
+      this.apagar();
     }else{
         this.encender();
     }
   }
   borrar() {
       this.formula = this.formula.toString().slice(0,-1);
-      this.refrescarFormula();
+      //this.refrescarFormula();
+      this.refrescarCampo('formula', this.formula);
       this.resultado = '';
       this.refrescarResultado();
       
+      this.refrescarCampo('mitexto', 'HOLA NANCY COMO STAS?!');
   }
 
-  
 
   borrarTodo(){
-    this.formula = ' ';
-    this.resultado = ' ';
+    this.formula='';
+    //this.refrescarFormula();
+    this.refrescarCampo('formula', '0');
+    this.resultado='';
+    this.refrescarCampo('resultado', '');
+    //this.refrescarResultado();
+  }
+
+  refrescarCampo(htmlId, valor){
+    let elementoFormula = document.getElementById(htmlId);
+    elementoFormula.innerText = valor;
   }
 
   refrescarFormula(){
