@@ -12,6 +12,11 @@ class MiCalculadora {
     }
   }
 
+  anyadirPI(){
+    return Math.PI;
+    this.refrescarFormula();
+  }
+
   calcularResultado(){
     try{
     this.resultado= eval(this.formula);
@@ -29,6 +34,7 @@ class MiCalculadora {
     this.resultado = ' ';  
     this.estaEncendido = false;
     this.refrescarFormula();
+    this.refrescarResultado();
     console.log('se apago la calculadora');
   }
 
@@ -36,7 +42,7 @@ class MiCalculadora {
       this.formula = ' ';
       this.resultado = ' ';
       this.estaEncendido = true;
-      this.refrescarFormula();
+      this.refrescarFormula(0);
       console.log('se encendio la calculadora');
   }
 
@@ -46,6 +52,7 @@ class MiCalculadora {
       this.apagar();
     }else{
         this.encender();
+        this.refrescarFormula(0);
     }
   }
   borrar() {

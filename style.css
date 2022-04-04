@@ -1,10 +1,15 @@
 
+body{
+    background-color: #f5cb9c;
+}
+
 #calculador{
     width: 500px;
     height: 430px;
     margin: 0 auto;
     border: 1px solid black;
     padding: 10px;
+    background-color: rgb(158, 121, 239);
 }
 
 #formula{
@@ -36,6 +41,7 @@
     margin-bottom: 5px;
     margin-top: 5px;
     width: 90%;
+    background-color: rgb(155, 145, 133);
 }
 
 button:hover {
