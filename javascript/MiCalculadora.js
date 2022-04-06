@@ -2,7 +2,37 @@ class MiCalculadora {
     constructor() {
       this.formula = '';
       this.resultado = '';
-      this.estaEncendido = false;
+      this.estaEncendido = true;
+      this.elements = document.querySelectorAll('.btn-calc');
+      
+
+
+       this.elements.forEach( elemento=> {
+        e.addEventListener('click', function() {
+
+         // switch(elemento)
+
+    
+
+          // probar con un switch
+          elemento.getAttribute('value')
+          console.log(elemento.innerText);
+          if(elemento.innerText === 'on/off'){
+            calculadora.onOff();
+
+          } else if(elemento.innerText === 'CE') {
+            calculadora.borrarTodo();
+    
+          }else if(elemento.innerText === 'C') {
+            calculadora.borrar();
+          }else if(elemento.getAttribute('value') == '=' ){
+            calculadora.calcularResultado();
+          } else {
+            calculadora.anyadirValor(elemento.innerText);
+     
+          }
+        });
+      });
     }
 
   anyadirValor(valor){
@@ -12,10 +42,6 @@ class MiCalculadora {
     }
   }
 
-  anyadirPI(){
-    return Math.PI;
-    this.refrescarFormula();
-  }
 
   calcularResultado(){
     try{
@@ -35,6 +61,7 @@ class MiCalculadora {
     this.estaEncendido = false;
     this.refrescarFormula();
     this.refrescarResultado();
+
     console.log('se apago la calculadora');
   }
 
@@ -49,10 +76,12 @@ class MiCalculadora {
 
   onOff(){
     if(this.estaEncendido){
-      this.apagar();
+      this.refrescarFormula(0);
     }else{
-        this.encender();
-        this.refrescarFormula(0);
+      this.apagar();
+      this.refrescarFormula();  
+      /* this.encender();
+      this.refrescarCampo('formula', '0'); */
     }
   }
   borrar() {
@@ -61,8 +90,7 @@ class MiCalculadora {
       this.refrescarCampo('formula', this.formula);
       this.resultado = '';
       this.refrescarResultado();
-      
-      this.refrescarCampo('mitexto', 'HOLA NANCY COMO STAS?!');
+      this.refrescarCampo();
   }
 
 
@@ -89,7 +117,11 @@ class MiCalculadora {
   refrescarResultado(){
     document.getElementById('resultado').innerText = this.resultado;
   }
+
+  
+
+
+
   }
 
   const calculadora = new MiCalculadora();
-  

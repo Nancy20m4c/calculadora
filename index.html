@@ -1,118 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href='style.css' rel="stylesheet">
     <title>CALCULADORA</title>
 </head>
+
 <body>
-
-<div id="calculador">
-    <div class="display">
-        <div id="resultado" class="valor w100 ">&nbsp</div>
-        <div id="formula" class="formula w100">&nbsp</div>
-        
+    
+    <div id="calculador">
+        <div class="display">
+            <div id="resultado" class="valor w100 ">&nbsp</div>
+            <div id="formula" class="formula w100">&nbsp</div>
+        </div>
+        <div id="botonera" class="w100">
+            <button class="btn-calc" value="Math.asin()"></button>
+            <button class="btn-calc" >cos</button>
+            <button class="btn-calc" >tan</button>
+            <button class="btn-calc" >&#69;&#88;&#80;</button>
+            <button class="btn-calc" >on/off</button>
+            <button class="btn-calc" >CE</button>
+            <button class="btn-calc" >C</button>
+            <button class="btn-calc" >&#40;</button>
+            <button class="btn-calc" >&#41;</button>
+            <button class="btn-calc" >7</button>
+            <button class="btn-calc" >8</button>
+            <button class="btn-calc" >9</button>
+            <button class="btn-calc" >&#37;</button>
+            <button class="btn-calc" >&radic;</button>
+            <button class="btn-calc" >4</button>
+            <button class="btn-calc" >5</button>
+            <button class="btn-calc" >6</button>
+            <button class="btn-calc" >&#47;</button>
+            <button class="btn-calc" >*</button>
+            <button class="btn-calc" >1</button>
+            <button class="btn-calc" >2</button>
+            <button class="btn-calc" >3</button>
+            <button class="btn-calc" >&#43;</button>
+            <button class="btn-calc" >&#8722;</button>
+            <button class="btn-calc" >0</button>
+            <button class="btn-calc" >&#8228;</button>
+            <button class="btn-calc" value="=">=</button>
+        </div>
     </div>
-    <div id="botonera w100">
-        <div class="fila w100"> 
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('Math.asin')">sen</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('cos')">cos</button>
-            </div><div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('tan')">tan</button>
-            </div><div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirPI(PI)">&#960;</button>
-            </div><div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('exp')">&#69;&#88;&#80;</button>
-            </div>
-        </div>
-        <div class="fila w100">
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.onOff()">on/off</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.borrar()">CE</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.borrarTodo()">C</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc"onclick="calculadora.anyadirValor('(')" >&#40;</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor(')')">&#41;</button>
-            </div>
-        </div>
-        <div class="fila w100">
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('7')">7</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('8')">8</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('9')">9</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('%')">&#37;</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc"onclick="calculadora.anyadirValor('radic')" >&radic;</button>
-            </div>
-        </div>
-        <div class="fila w100">
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('4')">4</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('5')">5</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('6')">6</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('/')">&#47;</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('*')">&#8270;</button>
-            </div>
-        </div>
-        <div class="fila w100">
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('1')">1</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('2')">2</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc"onclick="calculadora.anyadirValor('3')">3</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('+')">&#43;</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('-')">&#8722;</button>
-            </div>
-        </div>
-        <div class="fila w100">
-            <div class="columna w40">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('0')" >0</button>
-            </div>
-            <div class="columna w20">
-                <button class="btn-calc" onclick="calculadora.anyadirValor('.')">&#8228;</button>
-            </div>
-            <div class="columna w40">
-                <button class="btn-calc" onclick="calculadora.calcularResultado()">&#8215;</button>
-            </div>
-        </div>
-</div>
-
-<script src='javascript/MiCalculadora.js'></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src='javascript/MiCalculadora.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
