@@ -4,34 +4,27 @@ class MiCalculadora {
       this.resultado = '';
       this.estaEncendido = true;
       this.elements = document.querySelectorAll('.btn-calc');
-      
 
+       this.elements.forEach( elemento => {
 
-       this.elements.forEach( elemento=> {
-        e.addEventListener('click', function() {
-
-         // switch(elemento)
-
-    
-
-          // probar con un switch
-          elemento.getAttribute('value')
-          console.log(elemento.innerText);
-          if(elemento.innerText === 'on/off'){
-            calculadora.onOff();
-
-          } else if(elemento.innerText === 'CE') {
-            calculadora.borrarTodo();
-    
-          }else if(elemento.innerText === 'C') {
-            calculadora.borrar();
-          }else if(elemento.getAttribute('value') == '=' ){
-            calculadora.calcularResultado();
-          } else {
-            calculadora.anyadirValor(elemento.innerText);
-     
-          }
-        });
+         elemento.addEventListener('click', function() {
+          switch(elemento.innerText) {
+            case 'on/off':
+              calculadora.onOff();
+              break;
+            case 'CE':
+              calculadora.borrarTodo();
+              break;
+            case 'C':
+              calculadora.borrar();
+              break;
+            case '=':
+              calculadora.calcularResultado();
+              break;
+            default:
+              calculadora.anyadirValor(elemento.innerText);
+            }
+          });
       });
     }
 
@@ -42,14 +35,12 @@ class MiCalculadora {
     }
   }
 
-
   calcularResultado(){
-    try{
-    this.resultado= eval(this.formula);
-    document.getElementById('resultado').innerText = this.resultado;
-  }catch(error){
-    document.getElementById('resultado').innerText = error;
-
+    try {
+      this.resultado= eval(this.formula);
+      document.getElementById('resultado').innerText = this.resultado;
+    } catch (error) {
+      document.getElementById('resultado').innerText = error;
   }
     
     
@@ -69,28 +60,28 @@ class MiCalculadora {
       this.formula = ' ';
       this.resultado = ' ';
       this.estaEncendido = true;
-      this.refrescarFormula(0);
+      this.refrescarCampo('formula', '0');
       console.log('se encendio la calculadora');
   }
 
 
   onOff(){
     if(this.estaEncendido){
-      this.refrescarFormula(0);
+      this.refrescarFormula();
+      this.refrescarCampo('formula', '0');
     }else{
       this.apagar();
-      this.refrescarFormula();  
-      /* this.encender();
-      this.refrescarCampo('formula', '0'); */
+      this.refrescarFormula();
+      this.refrescarResultado();
+     
     }
   }
   borrar() {
       this.formula = this.formula.toString().slice(0,-1);
-      //this.refrescarFormula();
+      this.refrescarFormula();
       this.refrescarCampo('formula', this.formula);
       this.resultado = '';
       this.refrescarResultado();
-      this.refrescarCampo();
   }
 
 
@@ -119,9 +110,13 @@ class MiCalculadora {
   }
 
   
+  
 
 
 
   }
 
   const calculadora = new MiCalculadora();
+
+
+  calculadora.formula

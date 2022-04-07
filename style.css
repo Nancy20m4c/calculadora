@@ -4,18 +4,19 @@ body{
 }
 
 #calculador{
-    width: 500px;
+    width: 300px;
     /* height: 430px; */
     margin: 0 auto;
-    border: 1px solid black;
+    border: 1px solid rgba(68, 84, 154, 0.455);
     padding: 10px;
-    background-color: rgb(158, 121, 239);
+    background-color: rgb(77, 160, 223);
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
 }
 #botonera{
     display: grid;
-    grid-gap:5px;
+    grid-gap:3px;
     grid-template-columns: repeat(4,auto);
     grid-template-rows: repeat(4,auto);
 }
@@ -34,21 +35,23 @@ body{
     text-align: right;
     font-size: 29px;
     padding: 0px 10px;
-    background-color: #f6f6f6;
+    background-color: #f2c9f7;
     border-radius: 4px;
+    box-shadow: -1px 5px 0px #332c2c;
+    
 
 }
 
 .btn-calc{
-    border: 1px solid gray;
+    border: 3px solid gray;
     background: re;
-    border-radius: 2px;
+    border-radius: 6px;
     padding: 6px 1px;
     box-shadow: 2px 2px 0px #333;
     margin-bottom: 5px;
     margin-top: 5px;
-    width: 90%;
-    background-color: rgb(155, 145, 133);
+    width: 85%;
+    background-color: rgba(93, 123, 198, 0.511);
 }
 
 button:hover {
@@ -59,33 +62,10 @@ button:active {
     background-color: rgb(136, 136, 136);
    }
 
-.fila{
-    height: 50px;
+.encendido{
+    background-color: rgb(220, 46, 46);
+
 }
-.columna{
-
-    text-align: center;
-}
-
-
-
-
-.w100{
-    width: 100%;
-    float: left;
-}
-
-
-.w20{
-    width: 20%;
-    float: left;
-}
-
-.w40{
-    width: 40%;
-    float: left;
-}
-.w45{
-    width: 45%;
-    float: left;
+.apagado{
+    background-color: rgb(20, 140, 20);
 }
